@@ -286,6 +286,22 @@ def analyze_text(input_text, reference_text=None, check_ai=False, exclude_quotes
     return result
 
 # ─── Flask Routes ─────────────────────────────────────────────
+
+
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('punkt_tab')
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "PlagioCheck ML API is running"
+
+# CORS: allow only known frontend origins (set via env, comma-separated)
+allowed_origins = os.getenv('ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
+CORS(app, origins=allowed_origins)
+
 @app.route("/analyze", methods=["POST"])
 def analyze_endpoint():
     try:
