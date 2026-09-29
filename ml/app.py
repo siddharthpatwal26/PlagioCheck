@@ -14,9 +14,6 @@ import random
 from dotenv import load_dotenv
 
 load_dotenv()
-git add .
-git commit -m "add home route"
-git push
 
 # Tavily Client — key ab .env se aayegi, hardcoded nahi
 TAVILY_API_KEY = os.getenv('TAVILY_API_KEY')
