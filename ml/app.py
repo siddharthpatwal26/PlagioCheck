@@ -14,16 +14,9 @@ import random
 from dotenv import load_dotenv
 
 load_dotenv()
-
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('punkt_tab')
-
-app = Flask(__name__)
-
-# ✅ CORS — allow only known frontend origins (set via env, comma-separated)
-allowed_origins = os.getenv('ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
-CORS(app, origins=allowed_origins)
+git add .
+git commit -m "add home route"
+git push
 
 # Tavily Client — key ab .env se aayegi, hardcoded nahi
 TAVILY_API_KEY = os.getenv('TAVILY_API_KEY')
